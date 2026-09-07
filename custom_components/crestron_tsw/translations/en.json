@@ -1,0 +1,50 @@
+{
+  "config": {
+    "abort": {
+      "single_instance_allowed": "Only one Crestron TSW listener can be configured."
+    },
+    "step": {
+      "user": {
+        "data": {
+          "host": "Listen address",
+          "ip_id": "CIP IP ID (decimal)",
+          "name": "Panel name",
+          "port": "CIP port"
+        },
+        "description": "The panel connects to Home Assistant. Use 0.0.0.0 and port 41794 unless you have a specific network requirement.",
+        "title": "Crestron TSW CIP listener"
+      }
+    }
+  },
+  "device_automation": {
+    "trigger_subtype": {
+      "1": "Hardware key 1",
+      "2": "Hardware key 2",
+      "3": "Hardware key 3",
+      "4": "Hardware key 4",
+      "5": "Hardware key 5",
+      "101": "Watch TV",
+      "102": "Apple TV",
+      "103": "System On",
+      "104": "Display / Input",
+      "105": "All Off",
+      "106": "Game Console",
+      "107": "Volume Up",
+      "108": "Volume Down",
+      "109": "Mute",
+      "110": "Music",
+      "111": "Play / Pause"
+    },
+    "trigger_type": {
+      "button_short_press": "Button pressed"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "connection": {
+        "name": "Connection"
+      }
+    }
+  },
+  "title": "Crestron TSW"
+}

@@ -1,0 +1,54 @@
+set_digital_feedback:
+  name: Set digital feedback
+  description: Set and retain a digital join state on the connected panel.
+  fields:
+    join:
+      name: Join
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 65535
+          mode: box
+    value:
+      name: Value
+      required: true
+      selector:
+        boolean: {}
+set_analog_feedback:
+  name: Set analog feedback
+  description: Set and retain an analog join value on the connected panel.
+  fields:
+    join:
+      name: Join
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 65535
+          mode: box
+    value:
+      name: Value
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 65535
+          mode: box
+set_serial_feedback:
+  name: Set serial feedback
+  description: Set and retain a serial join value on the connected panel.
+  fields:
+    join:
+      name: Join
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 65535
+          mode: box
+    value:
+      name: Value
+      required: true
+      selector:
+        text: {}
