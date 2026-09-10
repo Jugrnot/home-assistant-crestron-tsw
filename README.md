@@ -43,6 +43,13 @@ The integration creates event entities and device triggers for:
 | 109 | Mute |
 | 110 | Music |
 | 111 | Play / Pause |
+| 201 | All Zone Stereo |
+| 202 | Stereo Mode |
+| 203 | Surround |
+| 204 | Multi Ch Stereo |
+| 205 | Direct Mode |
+| 206 | TV Audio |
+| 207 | HEOS Music |
 
 In an automation, choose **Device**, select the Crestron TSW-750, and choose the
 named button trigger. Raw events are also fired as `crestron_tsw_join` and

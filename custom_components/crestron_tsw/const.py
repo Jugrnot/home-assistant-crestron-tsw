@@ -47,4 +47,11 @@ JOIN_NAMES: dict[int, str] = {
     109: "Mute",
     110: "Music",
     111: "Play / Pause",
+    201: "All Zone Stereo",
+    202: "Stereo Mode",
+    203: "Surround",
+    204: "Multi Ch Stereo",
+    205: "Direct Mode",
+    206: "TV Audio",
+    207: "HEOS Music",
 }

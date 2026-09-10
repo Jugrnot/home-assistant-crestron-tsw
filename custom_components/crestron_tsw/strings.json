@@ -33,7 +33,14 @@
       "108": "Volume Down",
       "109": "Mute",
       "110": "Music",
-      "111": "Play / Pause"
+      "111": "Play / Pause",
+      "201": "All Zone Stereo",
+      "202": "Stereo Mode",
+      "203": "Surround",
+      "204": "Multi Ch Stereo",
+      "205": "Direct Mode",
+      "206": "TV Audio",
+      "207": "HEOS Music"
     },
     "trigger_type": {
       "button_short_press": "Button pressed"
