@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.dispatcher import async_dispatcher_send
 
 from .cip import CIPJoinEvent, CIPServer
@@ -61,6 +61,10 @@ class CrestronTSWRuntime:
         await self.server.stop()
 
     def _handle_connection(self, connected: bool, remote_address: str | None) -> None:
+        self.hass.add_job(self._async_handle_connection, connected)
+
+    @callback
+    def _async_handle_connection(self, connected: bool) -> None:
         async_dispatcher_send(self.hass, f"{SIGNAL_CONNECTION}_{self.entry_id}", connected)
 
     def _handle_ready(self) -> None:
@@ -68,6 +72,10 @@ class CrestronTSWRuntime:
             self.send_feedback(join_type, join, value, remember=False)
 
     def _handle_join(self, event: CIPJoinEvent) -> None:
+        self.hass.add_job(self._async_handle_join, event)
+
+    @callback
+    def _async_handle_join(self, event: CIPJoinEvent) -> None:
         name = JOIN_NAMES.get(event.join, f"Join {event.join}")
         event_data: dict[str, Any] = {
             ATTR_ENTRY_ID: self.entry_id,
