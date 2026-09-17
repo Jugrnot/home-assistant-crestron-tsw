@@ -6,7 +6,7 @@ from typing import Any
 
 from homeassistant.components.binary_sensor import BinarySensorDeviceClass, BinarySensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -50,5 +50,6 @@ class CrestronConnectedSensor(CrestronTSWEntity, BinarySensorEntity):
             )
         )
 
+    @callback
     def _connection_changed(self, _connected: bool) -> None:
         self.async_write_ha_state()

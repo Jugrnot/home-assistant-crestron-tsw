@@ -6,7 +6,7 @@ from typing import ClassVar
 
 from homeassistant.components.event import EventEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -52,6 +52,7 @@ class CrestronJoinEventEntity(CrestronTSWEntity, EventEntity):
             )
         )
 
+    @callback
     def _handle_join(self, event: CIPJoinEvent) -> None:
         if event.type != "digital" or event.join != self.join:
             return
